@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
 
-  <Modal />
+  <Modal header="I am from the parent" text="I am the description from the parent" />
   <!-- <input type="text" ref="name"/>
  <button @click="handleClick" >Click here</button> -->
 </template>
