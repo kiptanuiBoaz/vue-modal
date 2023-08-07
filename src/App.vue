@@ -2,7 +2,10 @@
   <h1>{{ title }}</h1>
 
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @closeModal="setShowModal"/>
+    <Modal  theme="sale" @closeModal="setShowModal">
+      <h1>This is the slot title</h1>
+      <p>This si the slot description</p>
+    </Modal>
   </div>
 
   <button @click="setShowModal">Show modal</button>
