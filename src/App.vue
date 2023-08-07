@@ -1,7 +1,7 @@
 <template>
   <h1>{{ title }}</h1>
 
-  <Modal header="I am from the parent" text="I am the description from the parent" />
+  <Modal :header="header" :text="text" theme="sale"/>
   <!-- <input type="text" ref="name"/>
  <button @click="handleClick" >Click here</button> -->
 </template>
@@ -16,7 +16,9 @@ export default {
   },
   data() {
     return {
-      title: "My first App(Hello world)"
+      title: "My first App(Hello world)",
+      header:"I am from the parent",
+      text:"I am the description from the parent"
     }
   },
   methods: {
