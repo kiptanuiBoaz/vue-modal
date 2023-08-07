@@ -1,15 +1,30 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>{{ title }}</h1>
+
+  <Modal />
+  <!-- <input type="text" ref="name"/>
+ <button @click="handleClick" >Click here</button> -->
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Modal from "./components/Modal.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Modal
+  },
+  data() {
+    return {
+      title: "My first App(Hello world)"
+    }
+  },
+  methods: {
+    handleClick() {
+      console.log(this.$refs.name);
+      this.$refs.name.classList.add("active");
+      this.$refs.name.focus()
+    }
   }
 }
 </script>
@@ -22,5 +37,13 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.active {
+  background-color: red;
+}
+
+h1 {
+  color: green;
 }
 </style>
