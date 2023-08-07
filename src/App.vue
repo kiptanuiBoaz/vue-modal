@@ -1,7 +1,12 @@
 <template>
   <h1>{{ title }}</h1>
 
-  <Modal :header="header" :text="text" theme="sale"/>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" theme="sale" @closeModal="setShowModal"/>
+  </div>
+
+  <button @click="setShowModal">Show modal</button>
+  
   <!-- <input type="text" ref="name"/>
  <button @click="handleClick" >Click here</button> -->
 </template>
@@ -18,7 +23,8 @@ export default {
     return {
       title: "My first App(Hello world)",
       header:"I am from the parent",
-      text:"I am the description from the parent"
+      text:"I am the description from the parent",
+      showModal:false,
     }
   },
   methods: {
@@ -26,6 +32,9 @@ export default {
       console.log(this.$refs.name);
       this.$refs.name.classList.add("active");
       this.$refs.name.focus()
+    },
+    setShowModal(){
+    this.showModal = !this.showModal
     }
   }
 }
@@ -47,5 +56,9 @@ export default {
 
 h1 {
   color: green;
+}
+
+button{
+background:greenyellow;
 }
 </style>
